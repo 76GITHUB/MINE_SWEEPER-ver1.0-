@@ -129,14 +129,7 @@ void RecordE(int time) { //허접난이도 기록 등록용
 	cout << "이름을 입력해 주세요:";
 	cin >> name;
 	v.push_back(make_pair(time, name));
-	for (int i = 0; i < v.size(); i++)
-		cout << v[i].first << " " << v[i].second << endl;
-	system("pause");
 	sort(v.begin(), v.end(), cmp); //기록 정렬
-
-	for (int i = 0; i < v.size(); i++)
-		cout << v[i].first << " " << v[i].second << endl;
-	system("pause");
 	FILE *write = fopen("recordE.txt", "w");
 	if (write != NULL) {
 		for (int i = 0; i < v.size(); i++) {
