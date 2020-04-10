@@ -125,6 +125,7 @@ void RecordE(int time) { //허접난이도 기록 등록용
 	}
 	char name[100];
 	system("cls");
+	cout << "level: 허접" << endl;
 	cout << "당신의 기록:" << time << "초" << endl;
 	cout << "이름을 입력해 주세요:";
 	cin >> name;
@@ -140,6 +141,7 @@ void RecordE(int time) { //허접난이도 기록 등록용
 	}
 	fclose(write);
 	cout << "기록 완료" << endl;
+	system("pause");
 }
 
 void RecordM(int time) { //보통난이도 랭킹 등록용
@@ -157,6 +159,7 @@ void RecordM(int time) { //보통난이도 랭킹 등록용
 	}
 	char name[100];
 	system("cls");
+	cout << "level: 보통" << endl;
 	cout << "당신의 기록:" << time << "초" << endl;
 	cout << "이름을 입력해 주세요:";
 	cin >> name;
@@ -173,6 +176,7 @@ void RecordM(int time) { //보통난이도 랭킹 등록용
 	}
 	fclose(write);
 	cout << "기록 완료" << endl;
+	system("pause");
 }
 
 void RecordH(int time) { //고수난이도 랭킹등록용
@@ -190,6 +194,7 @@ void RecordH(int time) { //고수난이도 랭킹등록용
 	}
 	char name[100];
 	system("cls");
+	cout << "level: 고수" << endl;
 	cout << "당신의 기록:" << time << "초" << endl;
 	cout << "이름을 입력해 주세요:";
 	cin >> name;
@@ -206,6 +211,7 @@ void RecordH(int time) { //고수난이도 랭킹등록용
 	}
 	fclose(write);
 	cout << "기록 완료" << endl;
+	system("pause");
 }
 
 int main() {
@@ -223,9 +229,6 @@ int main() {
 	bool win;
 	clock_t start, end;
 	start = clock();
-	//RecordM(450);
-	//RecordH(1999);
-	//return 0;
 	while (1) {
 		cout << "=========지뢰 찾기========[난이도 선택]" << endl;
 		cout << "1.허접 2.보통 3.고수 4.리더보드" << endl;
@@ -379,7 +382,7 @@ int main() {
 					break;
 				case 'k':
 				case 'K':
-					if (rmap[p.y][p.x / 2] == '*') { GameOver(rmap, map, n, m); lose = true; break; }
+					if (rmap[p.y][p.x / 2] == '*' && map[p.y][p.x/2]=='.') { GameOver(rmap, map, n, m); lose = true; break; }
 					else { if (map[p.y][p.x / 2] == '.') { OpenMap(rmap, map, n, m, p.x / 2, p.y); break; } }
 					break;
 				case 'l':
